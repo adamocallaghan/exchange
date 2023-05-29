@@ -5,6 +5,12 @@ import "../node_modules/@openzeppelin/contracts/token/ERC20/ERC20.sol";
 
 contract Exchange is ERC20 {
 
+    /*  
+        ==============================================
+        === STATE VARIABLES, EVENTS & CONTSTRUCTOR ===
+        ==============================================
+    */
+
     address public cryptoDevTokenAddress;
 
     // Exchange is inheriting ERC20, becase our exchange would keep track of Crypto Dev LP tokens
@@ -12,6 +18,12 @@ contract Exchange is ERC20 {
         require(_CryptoDevtoken != address(0), "Token address passed is a null address");
         cryptoDevTokenAddress = _CryptoDevtoken;
     }
+
+    /*  
+        ==============================================
+        ================== FUNCTIONS =================
+        ==============================================
+    */
 
     /** 
     * @dev Returns the amount of `Crypto Dev Tokens` held by the contract
